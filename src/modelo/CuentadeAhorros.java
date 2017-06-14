@@ -9,48 +9,15 @@ package modelo;
  *
  * @author hp245
  */
-public class CuentadeAhorros {
-    private int numerodeCuenta;
-    private String cliente;
-    private double saldo;
-    private double tasadeIntereses;
-    private double comisionPorSaldo;
+public class CuentadeAhorros extends CuentaBasica {
+    protected double saldo;
+    protected double tasadeIntereses;
+    protected double comisionPorSaldo;
     
     private static final double SALDO_ACREEDOR = 50.0;
     
     public CuentadeAhorros (int numerodeCuenta, String cliente){
-        this.numerodeCuenta = numerodeCuenta;
-        this.cliente = cliente;
-    }
-    
-    public double getSaldo(){
-        return this.saldo;
-    }
-    
-    public boolean depositar (double cantidad){
-        boolean SaldoMayoroIgual;
-        if ( cantidad > 0){
-            SaldoMayoroIgual = true;
-        }
-        else {
-            SaldoMayoroIgual = false;
-        }
-        this.saldo = this.saldo + cantidad;
-        return SaldoMayoroIgual;
-    }
-        
-    public boolean retirar (double cantidad){
-        boolean seQuiereRetirar;
-        if ( cantidad > this.saldo){
-           seQuiereRetirar = true;
-           System.out.println("Querido usuario, le informamos que el saldo de la cuenta debe ser mayor al saldo a retirar");
-       }
-        else {
-           seQuiereRetirar = false;
-           this.saldo = this.saldo - cantidad;
-           System.out.println("Querido usuario, su retiró se efectuo exitosamente"); 
-       }
-       return seQuiereRetirar;
+        super (numerodeCuenta, cliente);
     }
     
     public double calcularIntereses (){
