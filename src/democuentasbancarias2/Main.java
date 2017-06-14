@@ -8,6 +8,7 @@ package democuentasbancarias2;
 import java.util.Scanner;
 import modelo.CuentaBasica;
 import modelo.CuentadeAhorros;
+import modelo.CuentadeCheques;
 
 /**
  *
@@ -114,6 +115,39 @@ public class Main {
         System.out.println("                                                  ");
         System.out.println("Corte mensual: " + (( misAhorros.getSaldo() +  misAhorros.calcularIntereses())- misAhorros.calcularComisión()));
         System.out.println("Saldo final de la cuenta: $" + misAhorros.getSaldo());
+    
+        System.out.println("                                                  ");
+        CuentadeCheques misCheques = new CuentadeCheques (16470287, "Joel");
+        System.out.println("Mi Cuenta de Cheques *-*");
+            
+            
+        misCheques.depositar(2000.0);
+        System.out.println("El saldo actual de la cuenta de cheques 16470287 es $" + misCheques.getSaldo());
+        System.out.println("                                                  ");
+        System.out.println("Bienvenido a su cuenta de cheques ");
+        System.out.println("¿Desea Depositar o Retirar?");
+        System.out.println("Retirar");
+        System.out.println("Retirar: $100.00");
+        misCheques.retirar(100.0);
+        System.out.println("El saldo actual de la cuenta de cheques 16470287 es $" + misCheques.getSaldo());
+        System.out.println("                                                   ");
+        System.out.println("Bienvenido a su cuenta de cheques ");
+        System.out.println("¿Desea Depositar o Retirar?");
+        System.out.println("Retirar");
+        System.out.println("Retirar: $100.00");
+        misCheques.retirar(100.0);
+        System.out.println("El saldo actual de la cuenta de cheques 16470287 es $" + misCheques.getSaldo());
+        System.out.println("                                                   ");
+        System.out.println("Bienvenido a su cuenta de cheques ");
+        System.out.println("¿Desea Depositar o Retirar?");
+        System.out.println("Depositar");
+        System.out.println("Depositar: $200.00");
+        misCheques.depositar(200.0);
+        System.out.println("El saldo actual de la cuenta de cheques 16470287 es $" + misCheques.getSaldo());
+        System.out.println("                                                   ");
+        System.out.println("Comisión por cheques rebotados: $" + misCheques.calcularComisiónChequesRebotados());
+        System.out.println("Comisión por cheques emitidos: $" + misCheques.calcularComisiónChequesEmitidos());
+        System.out.println("El saldo actual de la cuenta de cheques 16470287 es $" + misCheques.getSaldo());
     }
     
 }
